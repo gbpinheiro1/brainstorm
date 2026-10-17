@@ -12,6 +12,8 @@ const envSchema = z.object({
     .string()
     .min(32, "O segredo precisa ter ao menos 32 caracteres"),
   BETTER_AUTH_URL: z.url(),
+  GOOGLE_CLIENT_ID: z.string().min(1),
+  GOOGLE_CLIENT_SECRET: z.string().min(1),
 })
 
 const parsed = envSchema.safeParse(process.env)
